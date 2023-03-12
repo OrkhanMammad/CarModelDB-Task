@@ -1,0 +1,43 @@
+﻿@model List<Marka>
+
+
+    <ul>
+    @foreach(Marka marka in Model)
+    {
+        <li>
+            @marka.Name @marka.Id 
+            <ul>
+                @foreach(CarModel carmodel in marka.CarModels)
+                {
+                    <li>@carmodel.Name @carmodel.Id
+                    <ul>
+                            @foreach(Car car in carmodel.Cars)
+                            {
+                                <li>@car.Name @car.BanType @car.FuelType @car.Year</li>
+
+                            }
+
+
+
+
+                    </ul>
+                    
+                    
+                    </li>
+                }
+
+
+            </ul>
+
+
+
+        </li>
+
+
+
+    }
+
+
+
+
+    </ul>
